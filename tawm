@@ -114,7 +114,8 @@ while 1:
         mouse_ev = None
     elif ev.type == X.KeyPress and wids:
         handler = bindings.get((ev.state, dpy.keycode_to_keysym(ev.detail, 0)))
-        handler[0](handler[1])
+        if handler:
+            handler[0](handler[1])
 
     root.change_property(net_client_list, Xatom.WINDOW, 32, [w.id for w in wids],)
     root.change_property(net_active_window, Xatom.WINDOW, 32, [wids[-1].id] if wids else [X.NONE],)
