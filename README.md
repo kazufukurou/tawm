@@ -12,7 +12,7 @@ The screen is split into 4 fields. Each field has corresponding keyboard key:
 '-------'    '-------'
 ```
 
-# Key bindings
+# Default key bindings
 
 Key | Action
 ----|-------
