@@ -30,5 +30,5 @@ tawm
 ```
 Custom keys, (1 = Mod1):
 ```
-tawm 1 u i j k
+tawm 1 q w a s
 ```
