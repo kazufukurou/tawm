@@ -78,8 +78,10 @@ for key in bindings.keys():
 while 1:
     ev = dpy.next_event()
     if ev.type == X.MapNotify:
-        wids.append(ev.window)
-        activate_window(ev.window)
+        attr = ev.window.get_attributes()
+        if not attr.override_redirect and attr.map_state == X.IsViewable:
+            wids.append(ev.window)
+            activate_window(ev.window)
     elif ev.type == X.UnmapNotify:
         try:
             wids.remove(ev.window)
